@@ -1,9 +1,10 @@
 # Time Series Forecasting of Cryptocurrencies
 
 ## Overview
-O objetivo desse projeto é fazer prevsões para os __tickets__ citados pela **Paradigma Education** na ultima live ["Quais Moedas Vão SUBIR Neste Novo Ciclo do Bitcoin"](https://www.youtube.com/watch?v=IOB1J9S034g&t=948s).
+O objetivo desse projeto é fazer prevsões os top 20 criptoativos em captalização de mercado.
 
 ## Roadmap
+- [ ] Estruturação
 - [ ] Previsão Univariada
 - [ ] Previsão Multivariada
 - [ ] Previsão com modelos de Bagging e Boosting
