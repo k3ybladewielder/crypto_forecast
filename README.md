@@ -1,13 +1,14 @@
 # Time Series Forecasting of Cryptocurrencies
 
 ## Overview
-O objetivo desse projeto é fazer prevsões os top 20 criptoativos em captalização de mercado.
+O objetivo desse projeto é fazer prevsões os top 20 criptoativos em captalização de mercado. Sendo eles ```ADA, AVAX, BCH, BNB, BTC, DAI, DOGE, DOT, ETH, ICP, LINK, LTC, MATIC, SHIB, SOL, TON, TRX, USDC, USDT, XRP```. Os dados utilizados foram coletados no ```Coinmarketcap```.
 
 ## Roadmap
 - [ ] Estruturação
-- [ ] Previsão Univariada
-- [ ] Previsão Multivariada
-- [ ] Previsão com modelos de Bagging e Boosting
+- [ ] Coleta de dados via API
+- [X] Previsão Univariada
+- [X] Previsão Multivariada
+- [X] Previsão com modelos de Bagging e Boosting
 - [ ] Modularização
 - [ ] Deploy
 
