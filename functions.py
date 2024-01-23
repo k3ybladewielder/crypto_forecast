@@ -304,15 +304,15 @@ def gerar_previsoes_sarimax(df, best_params_dict, n_periods_out_of_sample=6):
 
     print("Gerando Previsões SARIMAX")
     for tk, params in tqdm(best_params_dict.items(), file=sys.stdout):
-
+        
         #print(f" Prevendo valores para {tk}")
         BEST_ORDER = params["best_order"]
         BEST_SEASONAL_ORDER = params["best_seasonal_order"]
 
-        model = SARIMAX(df[f'{tk}'], order=BEST_ORDER, seasonal_order=BEST_SEASONAL_ORDER, error_action='ignore', trace=False)
-        res = model.fit()
+        model = SARIMAX(df[f'{tk}'], order=BEST_ORDER, seasonal_order=BEST_SEASONAL_ORDER)
+        res = model.fit(disp=False)
 
-        fs = res.get_forecast(steps=n_periods_out_of_sample, trace=False, error_action='ignore')
+        fs = res.get_forecast(steps=n_periods_out_of_sample)
         fs_values = fs.predicted_mean
         fs_lower_bound = fs.conf_int().iloc[:, 0]
         fs_upper_bound = fs.conf_int().iloc[:, 1]
