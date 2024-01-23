@@ -6,11 +6,11 @@ O objetivo desse projeto é fazer prevsões os top 20 criptoativos em captaliza�
 ## Roadmap
 - [ ] Coleta de dados via API
 - [X] Previsão Univariada
-- [X] Previsão Multivariada
-- [X] Previsão com modelos de Bagging e Boosting
-- [ ] Estruturação de previsões
-- [ ] Estruturação do código
-- [ ] Modularização
+- [ ] Previsão Multivariada
+- [ ] Previsão com modelos de Bagging e Boosting
+- [X] Estruturação de previsões
+- [X] Estruturação do código
+- [X] Modularização
 - [ ] Demo
 - [ ] Deploy
 
@@ -23,7 +23,7 @@ O objetivo desse projeto é fazer prevsões os top 20 criptoativos em captaliza�
 3. Inicialize seu ambiente virtual com o comand ```source env/bin/activate```.
 4. Instale as bibliotecas necessárias do ```pip install -r requirements.txt```
 5. Atualize as tabelas com os históricos, salvos no path ```raw_data```.
-6. Execute o app desejado. Exemplo: ```python crypto_forecast.py```.
+6. Execute a aplicação para gerar as previsoes. Exemplo: ```python3 master.py```.
 
 # Contribuições
 Se você desenha contribuir com esse projeto com melhorias ou sugestões, sinta-se a vontade para abrir um pull request.
