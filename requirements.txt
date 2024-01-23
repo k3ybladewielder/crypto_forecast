@@ -10,3 +10,4 @@ pyarrow
 matplotlib
 seaborn
 plotly
+gradio

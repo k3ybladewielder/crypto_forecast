@@ -22,6 +22,8 @@ df_month_mean = calcular_medias_por_mes(df_month)
 
 ## criando df com histórico em cada coluna
 df_month_mean_pivot = pivotar_dataframe(df_month_mean)
+df_month_mean_pivot.set_index("month", inplace=True)
+df_month_mean_pivot = df_month_mean_pivot.asfreq(freq='MS')
 
 # métricas de avaliacao
 ## avaliando melhores parametros com auto_arima
@@ -46,7 +48,7 @@ fs_df = gerar_previsoes_sarimax(df_month_mean_pivot, best_params_dict, n_periods
 
 import pandas as pd
 df_forecast_results = pd.DataFrame()
-df_forecast_results = pd.concat([df_month_mean, fs_df], ignore_index=True)
+df_forecast_results = pd.concat([df_forecast, fs_df])
 
 # salvando tabelas
 # salvar_dados(df, df_month_mean, df_month_mean_pivot, silver_path, gold_path)

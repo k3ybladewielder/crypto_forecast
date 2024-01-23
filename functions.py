@@ -309,10 +309,10 @@ def gerar_previsoes_sarimax(df, best_params_dict, n_periods_out_of_sample=6):
         BEST_ORDER = params["best_order"]
         BEST_SEASONAL_ORDER = params["best_seasonal_order"]
 
-        model = SARIMAX(df[f'{tk}'], order=BEST_ORDER, seasonal_order=BEST_SEASONAL_ORDER)
-        res = model.fit(disp=False)
+        model = SARIMAX(df[f'{tk}'], order=BEST_ORDER, seasonal_order=BEST_SEASONAL_ORDER, freq="MS")
+        res = model.fit(disp=False, freq="MS")
 
-        fs = res.get_forecast(steps=n_periods_out_of_sample)
+        fs = res.get_forecast(steps=n_periods_out_of_sample, freq="MS")
         fs_values = fs.predicted_mean
         fs_lower_bound = fs.conf_int().iloc[:, 0]
         fs_upper_bound = fs.conf_int().iloc[:, 1]
@@ -329,6 +329,6 @@ def gerar_previsoes_sarimax(df, best_params_dict, n_periods_out_of_sample=6):
         fs_list.append(fs_values_df)
         
     fs_df = pd.concat(fs_list, ignore_index=True)		
-    fs_df.rename(columns={"predicted_mean": "close_mean"}, inplace=True)
-    fs_df.set_index("index", inplace=True)
+    fs_df.rename(columns={"predicted_mean": "close_mean", "index": "month"}, inplace=True)
+    fs_df.set_index("month", inplace=True)
     return fs_df
