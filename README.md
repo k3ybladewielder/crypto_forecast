@@ -1,6 +1,5 @@
 # Time Series Forecasting of Cryptocurrencies
 
-## Overview
 O objetivo desse projeto é fazer prevsões os top 20 criptoativos em captalização de mercado. Sendo eles ```ADA, AVAX, BCH, BNB, BTC, DAI, DOGE, DOT, ETH, ICP, LINK, LTC, MATIC, SHIB, SOL, TON, TRX, USDC, USDT, XRP```. Os dados utilizados foram coletados no ```Coinmarketcap```. 
 
 <img src="framework.png">
@@ -11,7 +10,7 @@ Para acessar a aplicação, basta executar a ```demo.py```, e selecionar quais a
 
 <img src="demo.gif"> 
 
-## Results
+## Resultados
 Para validação, foram utilizados os ultimos oito pontos e a métrica escolhida foi o ```mape``` e o ```mae```. MAPE, ou Erro Percentual Absoluto Médio (em inglês, Mean Absolute Percentage Error), é uma métrica de desempenho comumente usada para avaliar a precisão de um modelo de previsão em relação aos valores reais. É especialmente útil em contextos de previsão de séries temporais, como previsões financeiras, de vendas ou de demanda. A fórmula do MAPE é dada por:
 
 $MAPE = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{Y_i - \hat{Y}_i}{Y_i} \right| \times 100$
