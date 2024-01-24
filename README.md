@@ -7,10 +7,22 @@ O objetivo desse projeto é fazer prevsões os top 20 criptoativos em captaliza�
 
 O projeto foi dividido em três etapas: ```master```, ```functions``` e ```config```. O ```config``` é responsável por determinar todos os parâmetros e variáveis que serão usadas no pipeline, ```functions``` é onde todas as funções que serão usadas no pipeline estão, como ingestão de dados, processamento de dados, armazenamento, modelagem e previsão. O ```master``` é responsável por executar todo o pipeline.
 
+Para acessar a aplicação, basta executar a ```demo.py```, e selecionar quais ativos e suas previsões quer visualizar.
+
+<img src="demo.gif"> 
+
 ## Results
 <descrição>
 
 # Instruções de Uso
+1. Clone este repositório em seu ambiente de desenvolvimento local
+2. Crie seu ambiente virtual com o comando ```python3 -m venv env```.
+3. Inicialize seu ambiente virtual com o comand ```source env/bin/activate```.
+4. Instale as bibliotecas necessárias do ```pip install -r requirements.txt```
+5. Atualize as tabelas com os históricos, salvos no path ```raw_data```.
+6. Execute a aplicação para gerar as previsoes. Exemplo: ```python3 master.py```.
+7. Execute a demo e visualize a aplicação. Exemplo: ```python3 demo.py```.
+
 1. Clone este repositório em seu ambiente de desenvolvimento local:
    - Linux: Abra o terminal e use o comando `git clone https://github.com/k3ybladewielder/crypto_forecast.git`.
    - Windows: Utilize o Git Bash ou o GitHub Desktop para clonar o repositório.
