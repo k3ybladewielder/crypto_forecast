@@ -16,12 +16,12 @@ Para validação, foram utilizados os ultimos oito pontos e a métrica escolhida
 
 A fórmula do MAPE é dada por:
 
-$ MAPE = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{Y_i - \hat{Y}_i}{Y_i} \right| \times 100 $
+$MAPE = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{Y_i - \hat{Y}_i}{Y_i} \right| \times 100$
 
 Onde:
-- $(n) é o número total de observações.
-- $(Y_i) são os valores reais.
-- $(\hat{Y}_i) são os valores previstos.
+- $(n)$ é o número total de observações.
+- $(Y_i)$ são os valores reais.
+- $(\hat{Y}_i)$ são os valores previstos.
 
 O MAPE calcula a média dos percentuais absolutos de erro para cada observação. Ele expressa o erro como uma porcentagem da magnitude real dos valores, proporcionando uma medida relativa de precisão. Quanto menor o valor do MAPE, melhor é o desempenho do modelo de previsão.
 
