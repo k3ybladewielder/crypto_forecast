@@ -11,13 +11,31 @@ O projeto foi dividido em três etapas: ```master```, ```functions``` e ```confi
 <descrição>
 
 # Instruções de Uso
-1. Clone este repositório em seu ambiente de desenvolvimento local
-2. Crie seu ambiente virtual com o comando ```python3 -m venv env```.
-3. Inicialize seu ambiente virtual com o comand ```source env/bin/activate```.
-4. Instale as bibliotecas necessárias do ```pip install -r requirements.txt```
-5. Atualize as tabelas com os históricos, salvos no path ```raw_data```.
-6. Execute a aplicação para gerar as previsoes. Exemplo: ```python3 master.py```.
-7. Execute a demo e visualize a aplicação. Exemplo: ```python3 demo.py```.
+1. Clone este repositório em seu ambiente de desenvolvimento local:
+   - Linux: Abra o terminal e use o comando `git clone https://github.com/k3ybladewielder/crypto_forecast.git`.
+   - Windows: Utilize o Git Bash ou o GitHub Desktop para clonar o repositório.
+
+2. Crie seu ambiente virtual:
+   - Linux: No terminal, execute `python3 -m venv env`.
+   - Windows: Utilize o prompt de comando e execute `python -m venv env`.
+
+3. Inicialize seu ambiente virtual:
+   - Linux: No terminal, use o comando `source env/bin/activate`.
+   - Windows: No prompt de comando, execute `.\env\Scripts\activate`.
+
+4. Instale as bibliotecas necessárias:
+   - Execute `pip install -r requirements.txt`.
+
+5. Atualize as tabelas com os históricos, salvos no path `raw_data`:
+   - Linux/Windows: Certifique-se de ter os dados no diretório especificado e prossiga para o próximo passo.
+
+6. Execute a aplicação para gerar as previsões:
+   - Utilize o comando `python3 master.py` no Linux.
+   - No Windows, execute `python master.py`.
+
+7. Execute a demo e visualize a aplicação:
+   - No Linux, use `python3 demo.py`.
+   - No Windows, execute `python demo.py`.
 
 ## Roadmap
 - [ ] Coleta de dados via API
