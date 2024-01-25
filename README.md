@@ -55,6 +55,9 @@ O MAE é expresso na mesma unidade dos dados originais, tornando-o facilmente in
 | ICP    | 421.566771  | 6922.395599  | 123.337284| 100.603974 | 1672.767705 | 25.617233 |
 
 * Ordenado pelo mape_sarima
+* Apesar de termos valores altos de mape de 30% há ≃422%, é importante notar que **a variação percentual entre uma mesma variação absoluta entre valores menores e maiores vai ser maior para o valor menor**, como é o caso do preço do ICP em relação ao BTC. Note que, o Mean Absolute Error (MAE) é mínimo, sendo R$100 para o modelo arima e R$25 utilizando validação cruzada. É importante avaliar o desempenho de modelos sob várias métricas.
+
+<img src="evaluation_icp.png">
 
 # Instruções de Uso
 1. Clone este repositório em seu ambiente de desenvolvimento local. No Linux, abra o terminal e use o comando `git clone https://github.com/k3ybladewielder/crypto_forecast.git`. Windows, utilize o Git Bash ou o GitHub Desktop para clonar o repositório.
