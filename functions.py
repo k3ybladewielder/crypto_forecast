@@ -216,6 +216,11 @@ def pivotar_dataframe(df):
 
 """# Metrics"""
 
+# parametros
+arima_params = {'seasonal': True, 'm': 12, 'd': 1, 'D': 1, 'max_P': 3, 'max_Q': 3,
+    		'information_criterion': 'aic', 'trace': False, 'error_action': 'ignore',
+    		'stepwise': True}
+
 def processar_e_salvar_params(gold_save_path, filename, df, build_best_params=False):
     """
     Processa os parâmetros para cada ticker no DataFrame df usando auto_arima e salva os resultados em um arquivo JSON.
@@ -241,7 +246,7 @@ def processar_e_salvar_params(gold_save_path, filename, df, build_best_params=Fa
     else:
         best_params_dict = {}
         for tk in tqdm(df.columns, desc=f"Processando parâmetros para {tk}"):
-            model = auto_arima(df[tk].values, seasonal=True, m=12, D=1, start_P=1, start_Q=1, max_P=3, max_Q=3, information_criterion='aic', trace=False, error_action='ignore', stepwise=True)
+            model = auto_arima(df[tk].values, **arima_params)
             best_order = model.order
             best_seasonal_order = model.seasonal_order
             best_params_dict[tk] = {"best_order": model.order, "best_seasonal_order": model.seasonal_order}
