@@ -11,7 +11,7 @@ Para acessar a aplicação, basta executar a ```demo.py```, e selecionar quais a
 <img src="demo.gif"> 
 
 ## Resultados
-Para validação, foram utilizados os ultimos oito pontos e a métrica escolhida foi o ```mape``` e o ```mae```. MAPE, ou Erro Percentual Absoluto Médio (em inglês, Mean Absolute Percentage Error), é uma métrica de desempenho comumente usada para avaliar a precisão de um modelo de previsão em relação aos valores reais. É especialmente útil em contextos de previsão de séries temporais, como previsões financeiras, de vendas ou de demanda. A fórmula do MAPE é dada por:
+Para validação, foram utilizados os ultimos oito pontos utilizando a abordagem **hold-out** e também **cross-validation**, e as métricas escolhidas foram o ```mape``` e o ```mae```. MAPE, ou Erro Percentual Absoluto Médio (em inglês, Mean Absolute Percentage Error), é uma métrica de desempenho comumente usada para avaliar a precisão de um modelo de previsão em relação aos valores reais. É especialmente útil em contextos de previsão de séries temporais, como previsões financeiras, de vendas ou de demanda. A fórmula do MAPE é dada por:
 
 $MAPE = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{Y_i - \hat{Y}_i}{Y_i} \right| \times 100$
 
@@ -32,28 +32,29 @@ O MAE é expresso na mesma unidade dos dados originais, tornando-o facilmente in
 
 ## Tabela de validação
 
-| ticker | best_order | seasonal_order |    mape    |       mae       |
-|--------|------------|-----------------|------------|-----------------|
-|   ADA  | [1, 0, 0]  | [2, 1, 1, 12]   | 10.740474  | 19390.996653    |
-|  AVAX  | [2, 0, 1]  | [0, 1, 1, 12]   | 17.435001  | 31872.196455    |
-|   BCH  | [1, 0, 0]  | [3, 1, 0, 12]   | 10.743819  | 19135.388759    |
-|   BNB  | [1, 0, 0]  | [2, 1, 1, 12]   | 10.946921  | 19868.121288    |
-|   BTC  | [1, 0, 1]  | [1, 1, 1, 12]   | 13.471350  | 23093.933286    |
-|   DAI  | [1, 0, 0]  | [3, 1, 0, 12]   |  7.836956  | 13101.624286    |
-|  DOGE  | [1, 0, 0]  | [2, 1, 1, 12]   | 10.214730  | 18694.419320    |
-|   DOT  | [3, 0, 2]  | [2, 1, 1, 12]   | 13.770143  | 22343.713521    |
-|   ETH  | [3, 0, 0]  | [2, 1, 1, 12]   | 10.346384  | 17774.813332    |
-|   ICP  | [3, 0, 0]  | [2, 1, 1, 12]   | 16.385659  | 29059.471371    |
-|  LINK  | [2, 0, 1]  | [3, 1, 0, 12]   | 13.906275  | 22867.723883    |
-|   LTC  | [1, 0, 0]  | [3, 1, 0, 12]   |  9.435255  | 16931.779305    |
-|  MATIC | [1, 0, 0]  | [2, 1, 1, 12]   | 11.252736  | 20607.285179    |
-|  SHIB  | [1, 0, 0]  | [2, 1, 0, 12]   | 16.673016  | 31372.931028    |
-|   SOL  | [1, 0, 1]  | [2, 1, 1, 12]   |  9.659482  | 17426.534108    |
-|   TON  | [2, 0, 1]  | [0, 1, 1, 12]   | 30.972193  | 54042.987155    |
-|   TRX  | [4, 0, 0]  | [3, 1, 1, 12]   | 12.076602  | 20597.926721    |
-|  USDC  | [1, 0, 0]  | [3, 1, 0, 12]   | 12.209744  | 22041.845796    |
-|  USDT  | [1, 0, 0]  | [3, 1, 2, 12]   | 10.210693  | 18616.259729    |
-|   XRP  | [1, 0, 1]  | [3, 1, 0, 12]   | 10.993606  | 18390.086566    |
+| ticker | mape_sarima | mape_sarimax | mape_cv | mae_sarima | mae_sarimax | mae_cv |
+|--------|-------------|--------------|---------|------------|-------------|--------|
+| DAI    | 5.670075    | 14.467533    | 2.650308| 0.277119   | 0.708677    | 0.129174 |
+| USDT   | 7.696967    | 22.603099    | 2.732995| 0.376337   | 1.108861    | 0.133417 |
+| USDC   | 7.963068    | 1.433468     | 3.276416| 0.389791   | 0.069735    | 0.160348 |
+| TRX    | 14.044310   | 41.930238    | 4.292657| 0.069533   | 0.195964    | 0.019844 |
+| BTC    | 14.450785   | 43.185606    | 7.920819| 22800.108956| 74115.576692| 12718.244257 |
+| TON    | 18.058879   | 215.112722   | 25.671161| 1.671489   | 19.457761   | 2.625065 |
+| DOGE   | 19.416090   | 136.267667   | 20.647783| 0.075935   | 0.489655    | 0.076801 |
+| XRP    | 22.325071   | 60.150914    | 15.274238| 0.648774   | 1.715588    | 0.436744 |
+| LINK   | 29.873210   | 45.009988    | 34.926032| 15.905089  | 26.892435   | 15.065795 |
+| ADA    | 34.364591   | 128.963710   | 24.024396| 0.619184   | 2.468409    | 0.442270 |
+| BNB    | 38.154121   | 67.243913    | 14.146723| 435.891078 | 786.786060  | 175.191055 |
+| ETH    | 42.015750   | 39.859773    | 22.332538| 3947.682168| 3923.110340 | 2067.259047 |
+| LTC    | 43.429173   | 60.092082    | 21.143683| 153.044773 | 207.377738  | 79.377889 |
+| MATIC  | 46.461459   | 236.894380   | 13.780892| 1.546034   | 8.260224    | 0.454354 |
+| BCH    | 70.337658   | 114.963527   | 28.308773| 849.193294 | 1373.306185 | 362.082779 |
+| AVAX   | 158.885801  | 451.124073   | 87.616703| 120.260318 | 391.126210  | 64.356766 |
+| SOL    | 232.009651  | 57.570096    | 89.697974| 387.222808 | 96.381003   | 125.073977 |
+| DOT    | 332.528335  | 246.659618   | 70.276301| 86.421786  | 57.321539   | 18.688865 |
+| ICP    | 421.566771  | 6922.395599  | 123.337284| 100.603974 | 1672.767705 | 25.617233 |
+
+* Ordenado pelo mape_sarima
 
 # Instruções de Uso
 1. Clone este repositório em seu ambiente de desenvolvimento local. No Linux, abra o terminal e use o comando `git clone https://github.com/k3ybladewielder/crypto_forecast.git`. Windows, utilize o Git Bash ou o GitHub Desktop para clonar o repositório.
@@ -67,9 +68,11 @@ O MAE é expresso na mesma unidade dos dados originais, tornando-o facilmente in
 ## Roadmap
 - [ ] Coleta de dados via API
 - [X] Previsão Univariada
-- [ ] Previsão Multivariada
+- [X] Previsão Multivariada
 - [ ] Previsão com modelos de Bagging e Boosting
 - [ ] Seleção dinâmica do melhor modelo (uni, multi, bagging, boosting) para cada ativo.
+- [X] Validação
+- [ ] Validação automatizada ao retreinar os modelos
 - [X] Estruturação de previsões
 - [X] Estruturação do código
 - [X] Modularização
