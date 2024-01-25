@@ -69,6 +69,7 @@ O MAE é expresso na mesma unidade dos dados originais, tornando-o facilmente in
 - [X] Previsão Univariada
 - [ ] Previsão Multivariada
 - [ ] Previsão com modelos de Bagging e Boosting
+- [ ] Seleção dinâmica do melhor modelo (uni, multi, bagging, boosting) para cada ativo.
 - [X] Estruturação de previsões
 - [X] Estruturação do código
 - [X] Modularização
