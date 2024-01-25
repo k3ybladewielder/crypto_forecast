@@ -73,7 +73,7 @@ O MAE é expresso na mesma unidade dos dados originais, tornando-o facilmente in
 - [X] Estruturação de previsões
 - [X] Estruturação do código
 - [X] Modularização
-- [ ] Demo
+- [X] Demo
 - [ ] Deploy
 
 # Contribuições
